@@ -22,6 +22,7 @@ body {
 	font-size: 11pt;
 	font-family: Georgia, Garamond, serif;
 	background-image: url(http://courses.cs.washington.edu/courses/cse190m/09sp/homework/1/silverware.jpg);
+	background-attachment: fixed;
 }
 
 a {
