@@ -61,7 +61,7 @@ h1 {
     margin-right: 2%;
 }
 
-#column1 {
+#column2 {
     margin-right: 2%;
 }
 
@@ -82,6 +82,7 @@ h1 {
 }
 
 .reviewer {
+    overflow: hidden;
     margin-bottom: 3em;
 }
 
@@ -96,6 +97,7 @@ h1 {
 
 #pagenumber {
     margin: 0;
+    padding: 5px;
     clear: left;
     clear: right;
     background-color: #A2B964;
