@@ -1,0 +1,220 @@
+/* locate the position of the buttons */
+#bottom-positioner {
+	position: absolute;
+	left: 43%;
+	bottom: 46%;
+}
+
+/* the designed of the small @+ logo */
+.slogo {
+	border-radius: 50px;
+	background-color: #93ADCA;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 23px;
+	position: fixed;
+	left: 49.7%;
+	bottom: 19%;
+}
+
+/* the designed of the total button */
+#button {
+	width: 200px;
+	height: 250px;
+	position: fixed;
+	visibility: hidden;
+	transition: visibility 1s ease-out;
+}
+
+/* the general setting of the ul */
+ul {
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* the designed of the info-bar */
+#info-bar {
+	border-radius: 100px;
+	background-color: gray;
+	width: 125px;
+	height: 125px;
+	position: absolute;
+	left: 20%;
+	-webkit-transform: translateY(70%) scale(0.1);
+	opacity: 0;
+	-webkit-transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* the designed of the children of info-bar */
+.user, .comment, .mine {
+	position: absolute;
+}
+
+.user {
+	left: 30%;
+	top: 8%
+}
+
+.comment {
+	top: 34%;
+	left: 27%;
+}
+
+.posted {
+	top: 61%;
+	left: 15%;
+}
+
+.like {
+	top: 61%;
+	right: 30%;
+}
+
+/* the text designed of the children of info-bar */
+.user span {
+	color: white;
+	font-weight: bold;
+	font-size: 17pt;
+	position: absolute;
+	right: -100%;
+	top: -13%;
+}
+
+.comment span {
+	position: absolute;
+	right: -117%;
+	bottom: 3%;
+	font-weight: bold;
+	font-size: 23pt;
+	color: white;
+}
+
+.posted span {
+	position: absolute;
+	right: -73%;
+	font-size: 17pt;
+	font-weight: bold;
+	color: #079E6E;
+}
+
+.like span {
+	position: absolute;
+	right: -65%;
+	bottom: 9%;
+	font-weight: bold;
+	font-size: 17pt;
+	color: #079E6E;
+}
+
+/* the designed of the control-ring-container */
+#control-ring-container {
+	position: relative;
+	left: 0%;
+	top: 42%;
+	height: 150px;
+	-webkit-transform: translate(5%, -10%) scale(0.3);
+	opacity: 0;
+	-webkit-transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* the designed of the children of the control-ring-container */
+.button {
+	border-radius: 50px;
+	background-color: gray;
+	padding: 8px;
+	width: 22px;
+	height: 22px;
+}
+
+.unread {
+	border-radius: 50px;
+	background-color: red;
+	color: white;
+	font-weight: bold;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 7px;
+	padding-right: 7px;
+	position: absolute;
+	left: 65%;
+	top: -20%;
+}
+
+/* the position of the children of the control-ring-container */
+.mask {
+	position: absolute;
+	left: 10%;
+	top: 1%;
+}
+
+.history {
+	position: absolute;
+	left: 4%;
+	top: 29%;
+}
+
+.message {
+	position: absolute;
+	left: 14%;
+	top: 55%;
+}
+
+.setting {
+	position: absolute;
+	left: 36%;
+	top: 70%;
+}
+
+.sign {
+	position: absolute;
+	left: 60%;
+	top: 65%;
+}
+
+/* the designed of the big @+ icon */
+.blogo {
+	border-radius: 50px;
+	background-color: rgba(48, 63, 159, 1);
+	padding-top: 11px;
+	padding-bottom: 11px;
+	padding-left: 7px;
+	padding-right: 7px;
+	width: 36px;
+	height: 28px;
+	position: absolute;
+	left: 41%;
+	top: 53%;
+	-webkit-transform: scale(0.6);
+	opacity: 0;
+	-webkit-transition: transform 0.6s ease-out 0.4s, opacity 0.6s ease-out 0.4s;
+}
+
+/* the transition part of this homework */
+.slogo:hover~#button {
+	visibility: visible;
+}
+
+#button:hover {
+	visibility: visible;
+}
+
+#button:hover #info-bar {
+	-webkit-transform: translateY(0%) scale(1);
+	opacity: 1;
+	-webkit-transition: transform 0.5s ease-in 0.3s, opacity 0.3s ease-in 0.1s;
+}
+
+#button:hover #control-ring-container {
+	-webkit-transform: translate(0%, 0%) scale(1);
+	opacity: 1;
+	-webkit-transition: transform 0.6s ease-in 0.2s, opacity 0.7s ease-in 0.1s;
+}
+
+#button:hover .blogo {
+	-webkit-transform: scale(1);
+	opacity: 1;
+	-webkit-transition: transform 0.8s ease-in, opacity 0.3s ease-in;
+}
