@@ -1,6 +1,11 @@
+function only_number(s) {
+	return s == "1" || s == "2" || s == "3" || s == "4" || s == "5" || s == "6" ||
+		   s == "7" || s == "8" || s == "9" || s == "0";
+}
+
 function is_number(s) {
 	return s == "1" || s == "2" || s == "3" || s == "4" || s == "5" || s == "6" ||
-		   s == "7" || s == "8" || s == "9" || s == "0" || s == "." || s == "(" ||
+		   s == "7" || s == "8" || s == "9" || s == "0" || s == "(" ||
 		   s == ")";
 }
 
@@ -9,10 +14,17 @@ function is_operator(s) {
 }
 
 window.onload = function() {
+	var result_flag = false;
 	var input = "0123456789+-*/().";
 	for (var i = input.length - 1; i >= 0; i--) {
 		document.getElementById(input[i]).onclick = function() {
 			var str = document.getElementById("answer").innerHTML;
+			if (result_flag) {
+				if (only_number(this.innerHTML)) {
+					str = "";
+				}
+				result_flag = false;
+			}
 			if (str.length < 22)
 				document.getElementById("answer").innerHTML = str + this.innerHTML;
 		}
@@ -68,7 +80,7 @@ window.onload = function() {
 					}
 				}
 			}
-			if (str[i] == "*" || str[i] == "-" || str[i] == "*" || str[i] == "/") {
+			if (str[i] == "*" || str[i] == "-" || str[i] == "*" || str[i] == "/" || str[i] == ".") {
 				if (i != 0 && i != str.length - 1) {
 					if (is_number(str[i - 1]) == false || is_number(str[i + 1]) == false) {
 							flag = false;
@@ -83,8 +95,10 @@ window.onload = function() {
 
 		}
 		if (bracket.length != 0) flag = false;
-		if (flag)
+		if (flag) {
 		    document.getElementById("answer").innerHTML = eval(str);
+		    result_flag = true;
+		}
 		else {
 			alert("您输入的算式格式错误");
 			document.getElementById("answer").innerHTML = "";
